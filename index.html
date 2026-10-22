@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>HistoPráctica — Introducción (16:9)</title>
+<style>
+:root{--g:#58cc02;--gd:#58a700;--ok:#d7ffb8;--b:#1cb0f6;--y:#ffc800;--o:#ff9600;--nd:#ff4b4b;--tx:#4b4b4b;--mu:#777;--ln:#e5e5e5}
+html,body{margin:0;background:#fff}
+</style>
+<script src="assets/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-fps="30" data-start="0" data-duration="27">
+  <div id="s-bg" class="clip" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="27" data-track-index="0" data-track-kind="graphics"></div>
+  <div id="s-hook" class="clip" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0" data-duration="4.5" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-logo" class="clip" data-composition-id="logo" data-composition-src="compositions/logo.html" data-start="4.5" data-duration="4" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-quiz" class="clip" data-composition-id="quiz" data-composition-src="compositions/quiz.html" data-start="8.5" data-duration="4" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-tissues" class="clip" data-composition-id="tissues" data-composition-src="compositions/tissues.html" data-start="12.5" data-duration="3.5" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-progress" class="clip" data-composition-id="progress" data-composition-src="compositions/progress.html" data-start="16" data-duration="3.5" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-devices" class="clip" data-composition-id="devices" data-composition-src="compositions/devices.html" data-start="19.5" data-duration="3" data-track-index="1" data-track-kind="graphics"></div>
+  <div id="s-cta" class="clip" data-composition-id="cta" data-composition-src="compositions/cta.html" data-start="22.5" data-duration="4.5" data-track-index="1" data-track-kind="graphics"></div>
+</div>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+tl.set({},{},27);
+window.__timelines["main"]=tl;
+</script>
+</body>
+</html>
