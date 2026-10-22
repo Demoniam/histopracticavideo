@@ -1,0 +1,30 @@
+<template id="bg-template">
+<div id="root" data-composition-id="bg" data-width="1920" data-height="1080" data-duration="27">
+<style>
+@font-face{font-family:"HP Poppins";font-weight:400;src:url("assets/fonts/Poppins-Regular.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:500;src:url("assets/fonts/Poppins-Medium.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:700;src:url("assets/fonts/Poppins-Bold.ttf")}
+#root{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;font-family:"Nunito","HP Poppins",system-ui,sans-serif;font-weight:500;color:#4b4b4b}
+#root *{box-sizing:border-box}
+.ln{display:block;overflow:hidden;padding-bottom:8px}.ln>span{display:block}
+.g{color:#58cc02}
+#root{background:#fff}
+.b-dots{position:absolute;inset:0;background-image:radial-gradient(#e5e5e5 3px,transparent 3.5px);background-size:64px 64px;opacity:.7}
+.b-o{position:absolute;border-radius:50%;filter:blur(40px)}
+.b1{left:-200px;top:-260px;width:900px;height:900px;background:radial-gradient(circle,rgba(88,204,2,.22),rgba(88,204,2,0) 68%)}
+.b2{left:1250px;top:520px;width:1000px;height:1000px;background:radial-gradient(circle,rgba(28,176,246,.16),rgba(28,176,246,0) 68%)}
+.b3{left:1100px;top:-300px;width:800px;height:800px;background:radial-gradient(circle,rgba(255,200,0,.16),rgba(255,200,0,0) 68%)}
+</style>
+<div class="b-dots"></div><div class="b-o b1"></div><div class="b-o b2"></div><div class="b-o b3"></div>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+tl.fromTo(".b1",{x:0,y:0},{x:380,y:240,duration:27,ease:"none"},0)
+.fromTo(".b2",{x:0,y:0},{x:-420,y:-200,duration:27,ease:"none"},0)
+.fromTo(".b3",{x:0,y:0},{x:-300,y:300,duration:27,ease:"none"},0)
+.fromTo(".b-dots",{x:0,y:0},{x:-128,y:-64,duration:27,ease:"none"},0);
+tl.set({},{},27);
+window.__timelines["bg"]=tl;
+</script>
+</div>
+</template>

@@ -1,0 +1,38 @@
+<template id="cta-template">
+<div id="root" data-composition-id="cta" data-width="1920" data-height="1080" data-duration="4.5">
+<style>
+@font-face{font-family:"HP Poppins";font-weight:400;src:url("assets/fonts/Poppins-Regular.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:500;src:url("assets/fonts/Poppins-Medium.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:700;src:url("assets/fonts/Poppins-Bold.ttf")}
+#root{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;font-family:"Nunito","HP Poppins",system-ui,sans-serif;font-weight:500;color:#4b4b4b}
+#root *{box-sizing:border-box}
+.ln{display:block;overflow:hidden;padding-bottom:8px}.ln>span{display:block}
+.g{color:#58cc02}
+.c-tile{position:absolute;left:450px;top:130px;width:150px;height:150px;border-radius:36px;background:#d7ffb8}
+.c-tile svg{position:absolute;left:28px;top:24px}
+.c-word{position:absolute;left:636px;top:140px;font-size:120px;line-height:1.1;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.c-word b{color:#58cc02;font-weight:700}.c-word span{display:inline-block}
+.c-h{position:absolute;left:0;top:350px;width:1920px;text-align:center;font-size:84px;line-height:1.15;font-weight:700}
+.c-h em{font-style:normal;color:#58cc02}
+.c-btn{position:absolute;left:520px;top:665px;width:880px;height:130px;border-radius:34px;background:#58cc02;box-shadow:0 10px 0 #58a700;color:#fff;font-size:62px;font-weight:700;letter-spacing:.05em;display:flex;align-items:center;justify-content:center}
+.c-ring{position:absolute;left:520px;top:665px;width:880px;height:130px;border-radius:34px;border:6px solid #58cc02}
+.c-sub{position:absolute;left:0;top:860px;width:1920px;text-align:center;font-size:36px;color:#777}
+</style>
+<div class="c-tile"><svg viewBox="4 0 60 64" width="94" height="100" fill="none" stroke="#58a700" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path class="m-seg" pathLength="1" d="m25 8 13 7-12 22-13-7z"/><path class="m-seg" pathLength="1" d="m29 10 3-5 7 4-3 5"/><path class="m-seg" pathLength="1" d="M19 34l-3 6 6 3 3-6"/><path class="m-seg" pathLength="1" d="M34 24c12 0 20 8 20 18s-8 17-20 17H10"/><path class="m-seg" pathLength="1" d="M13 47h23"/><path class="m-seg" pathLength="1" d="M31 47v12"/><path class="m-seg" pathLength="1" d="M49 59h9"/><circle class="m-seg" pathLength="1" cx="36" cy="29" r="4"/></svg></div><div class="c-word" data-var-text="marca"><span class="cw">H</span><span class="cw">i</span><span class="cw">s</span><span class="cw">t</span><span class="cw">o</span><b><span class="cw">P</span><span class="cw">r</span><span class="cw">á</span><span class="cw">c</span><span class="cw">t</span><span class="cw">i</span><span class="cw">c</span><span class="cw">a</span></b></div><div class="c-h"><span class="ln"><span>Practica hasta reconocer</span></span><span class="ln"><span><em>cada tejido.</em></span></span></div><div class="c-ring"></div><div class="c-btn" data-var-text="url">HISTOPRACTICA.ONLINE</div><div class="c-sub" data-var-text="sub">Sin costo para practicar · Creada por un estudiante de Medicina</div>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+tl.fromTo(".c-tile",{scale:.5,opacity:0},{scale:1,opacity:1,duration:.6,ease:"back.out(1.8)"},.1);
+tl.set(".m-seg",{strokeDasharray:"1 1",strokeDashoffset:1,opacity:0},0).to(".m-seg",{opacity:1,duration:.01,stagger:0.08},0.3).to(".m-seg",{strokeDashoffset:0,duration:0.6,ease:"power2.inOut",stagger:0.08},0.3);
+tl.fromTo(".cw",{yPercent:90,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:"back.out(1.7)",stagger:.03},.5)
+.fromTo(".c-h .ln>span",{yPercent:115},{yPercent:0,duration:.7,ease:"power4.out",stagger:.15},1.0)
+.fromTo(".c-btn",{scale:.7,opacity:0},{scale:1,opacity:1,duration:.7,ease:"back.out(1.8)"},1.7)
+.fromTo(".c-sub",{y:20,opacity:0},{y:0,opacity:1,duration:.6,ease:"power3.out"},2.2)
+.set(".c-ring",{opacity:0},0)
+.fromTo(".c-ring",{scale:1,opacity:.8},{scale:1.18,opacity:0,duration:.9,ease:"power2.out",immediateRender:false},2.4)
+.fromTo(".c-ring",{scale:1,opacity:.8},{scale:1.18,opacity:0,duration:.9,ease:"power2.out",immediateRender:false},3.4);
+tl.set({},{},4.5);
+window.__timelines["cta"]=tl;
+</script>
+</div>
+</template>

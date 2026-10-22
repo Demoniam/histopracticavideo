@@ -1,0 +1,36 @@
+<template id="logo-template">
+<div id="root" data-composition-id="logo" data-width="1920" data-height="1080" data-duration="4">
+<style>
+@font-face{font-family:"HP Poppins";font-weight:400;src:url("assets/fonts/Poppins-Regular.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:500;src:url("assets/fonts/Poppins-Medium.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:700;src:url("assets/fonts/Poppins-Bold.ttf")}
+#root{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;font-family:"Nunito","HP Poppins",system-ui,sans-serif;font-weight:500;color:#4b4b4b}
+#root *{box-sizing:border-box}
+.ln{display:block;overflow:hidden;padding-bottom:8px}.ln>span{display:block}
+.g{color:#58cc02}
+.l-disc{position:absolute;left:920px;top:500px;width:80px;height:80px;border-radius:50%;background:#58cc02;z-index:5}
+.l-tile{position:absolute;left:234px;top:370px;width:340px;height:340px;border-radius:80px;background:#d7ffb8}
+.l-tile svg{position:absolute;left:63px;top:56px}
+.l-word{position:absolute;left:644px;top:392px;font-size:150px;line-height:1.1;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.l-word b{color:#58cc02;font-weight:700}
+.l-word span{display:inline-block}
+.l-tag{position:absolute;left:652px;top:600px;font-size:46px;line-height:1.3;color:#777}
+.l-dot{position:absolute;width:22px;height:22px;border-radius:50%}
+</style>
+<div class="l-tile"><svg viewBox="4 0 60 64" width="214" height="228" fill="none" stroke="#58a700" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path class="m-seg" pathLength="1" d="m25 8 13 7-12 22-13-7z"/><path class="m-seg" pathLength="1" d="m29 10 3-5 7 4-3 5"/><path class="m-seg" pathLength="1" d="M19 34l-3 6 6 3 3-6"/><path class="m-seg" pathLength="1" d="M34 24c12 0 20 8 20 18s-8 17-20 17H10"/><path class="m-seg" pathLength="1" d="M13 47h23"/><path class="m-seg" pathLength="1" d="M31 47v12"/><path class="m-seg" pathLength="1" d="M49 59h9"/><circle class="m-seg" pathLength="1" cx="36" cy="29" r="4"/></svg></div><div class="l-word" data-var-text="marca"><span class="lt">H</span><span class="lt">i</span><span class="lt">s</span><span class="lt">t</span><span class="lt">o</span><b><span class="lt">P</span><span class="lt">r</span><span class="lt">á</span><span class="lt">c</span><span class="lt">t</span><span class="lt">i</span><span class="lt">c</span><span class="lt">a</span></b></div><div class="l-tag"><span class="ln"><span>Entrena tu ojo histológico,</span></span><span class="ln"><span>en cualquier dispositivo.</span></span></div><i class="l-dot" style="left:210px;top:330px;background:#ffc800"></i><i class="l-dot" style="left:560px;top:330px;background:#1cb0f6"></i><i class="l-dot" style="left:200px;top:700px;background:#58cc02"></i><i class="l-dot" style="left:570px;top:720px;background:#ff9600"></i><i class="l-dot" style="left:380px;top:300px;background:#ce82ff"></i><i class="l-dot" style="left:380px;top:740px;background:#ff4b4b"></i><div class="l-disc"></div>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+tl.fromTo(".l-disc",{scale:42},{scale:0,duration:.9,ease:"power3.out"},0)
+.fromTo(".l-tile",{scale:.5,opacity:0},{scale:1,opacity:1,duration:.7,ease:"back.out(1.6)"},.5);
+tl.set(".m-seg",{strokeDasharray:"1 1",strokeDashoffset:1,opacity:0},0).to(".m-seg",{opacity:1,duration:.01,stagger:0.12},0.8).to(".m-seg",{strokeDashoffset:0,duration:0.7,ease:"power2.inOut",stagger:0.12},0.8);
+tl.fromTo(".lt",{yPercent:90,opacity:0},{yPercent:0,opacity:1,duration:.5,ease:"back.out(1.7)",stagger:.035},1.1)
+.fromTo(".l-tag .ln>span",{yPercent:115},{yPercent:0,duration:.6,ease:"power3.out",stagger:.12},2.0)
+.fromTo(".l-dot",{scale:0,opacity:1},{scale:1,opacity:1,duration:.45,ease:"back.out(2.4)",stagger:.07},1.6)
+.to(".l-dot",{scale:0,duration:.3,ease:"power2.in",stagger:.05},2.8)
+.to(["#root .l-tile",".l-word",".l-tag"],{x:-90,opacity:0,duration:.5,ease:"power2.in"},3.5);
+tl.set({},{},4);
+window.__timelines["logo"]=tl;
+</script>
+</div>
+</template>

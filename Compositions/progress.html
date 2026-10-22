@@ -1,0 +1,33 @@
+<template id="progress-template">
+<div id="root" data-composition-id="progress" data-width="1920" data-height="1080" data-duration="3.5">
+<style>
+@font-face{font-family:"HP Poppins";font-weight:400;src:url("assets/fonts/Poppins-Regular.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:500;src:url("assets/fonts/Poppins-Medium.ttf")}
+@font-face{font-family:"HP Poppins";font-weight:700;src:url("assets/fonts/Poppins-Bold.ttf")}
+#root{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;font-family:"Nunito","HP Poppins",system-ui,sans-serif;font-weight:500;color:#4b4b4b}
+#root *{box-sizing:border-box}
+.ln{display:block;overflow:hidden;padding-bottom:8px}.ln>span{display:block}
+.g{color:#58cc02}
+.p-title{position:absolute;left:0;top:120px;width:1920px;text-align:center;font-size:84px;font-weight:700;line-height:1.1}
+.p-title em{font-style:normal;color:#58cc02}
+.p-card{position:absolute;top:330px;width:500px;height:480px;padding:48px 44px;border:2px solid #e5e5e5;border-radius:32px;background:#fff;box-shadow:0 8px 0 #e5e5e5,0 30px 60px rgba(75,75,75,.1)}
+.p-ic{display:flex;align-items:center;justify-content:center;width:168px;height:168px;border-radius:50%}
+.p-card h3{margin:36px 0 12px;font-size:60px;font-weight:700}
+.p-card p{margin:0;font-size:36px;line-height:1.35;color:#777;text-wrap:balance}
+</style>
+<div class="p-title"><span class="ln"><span>Mide tu <em>progreso</em></span></span></div><div class="p-card p-c1" style="left:162px"><span class="p-ic" style="background:#ffdfe0"><svg class="" viewBox="0 0 24 24" width="104" height="104" fill="#ff4b4b"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg></span><h3>Errores</h3><p>Repasa las preguntas que fallaste.</p></div><div class="p-card p-c2" style="left:710px"><span class="p-ic" style="background:#ffe6c2"><svg class="" viewBox="0 0 24 24" width="104" height="104" fill="#ff9600"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.6.6 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27"/></svg></span><h3>Racha</h3><p>Practica cada día y no la pierdas.</p></div><div class="p-card p-c3" style="left:1258px"><span class="p-ic" style="background:#fff1b8"><svg class="" viewBox="0 0 24 24" width="104" height="104" fill="#ffc800"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm14 0h-2V4h2z"/></svg></span><h3>Ranking</h3><p>Compara tu racha y tu XP.</p></div>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+tl.fromTo(".p-title .ln>span",{yPercent:115},{yPercent:0,duration:.7,ease:"power4.out"},0)
+.fromTo(".p-card",{y:160,rotation:4,opacity:0},{y:0,rotation:0,opacity:1,duration:.7,ease:"power3.out",stagger:.15},.3)
+.fromTo(".p-ic",{scale:.4},{scale:1,duration:.6,ease:"back.out(2.2)",stagger:.15},.55)
+.to(".p-c1 .p-ic",{rotation:10,duration:.1,yoyo:true,repeat:5,ease:"none"},1.4)
+.to(".p-c2 .p-ic",{scale:1.14,duration:.25,yoyo:true,repeat:3,ease:"sine.inOut"},1.6)
+.to(".p-c3 .p-ic",{rotation:-12,duration:.12,yoyo:true,repeat:5,ease:"sine.inOut"},1.8)
+.to([".p-title",".p-card"],{opacity:0,y:-40,duration:.4,ease:"power2.in",stagger:.04},3.05);
+tl.set({},{},3.5);
+window.__timelines["progress"]=tl;
+</script>
+</div>
+</template>
